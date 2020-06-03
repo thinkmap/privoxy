@@ -16,7 +16,7 @@ RUN apk --no-cache --update add privoxy wget ca-certificates bash p7zip && \
     echo 'actionsfile ab2p.action' >> /etc/privoxy/config && \
     echo 'filterfile ab2p.system.filter' >> /etc/privoxy/config && \
     echo 'filterfile ab2p.filter' >> /etc/privoxy/config && \
-    echo 'forward-socks5t / 127.0.0.1:9050 .'  >> /etc/privoxy/config && \
+    echo 'forward-socks5t / 172.17.0.1:9051 .'  >> /etc/privoxy/config && \
     rm -Rf temp ab2p.easylist_advblock.7z && \
     apk del bash p7zip
 RUN chown privoxy.privoxy /etc/privoxy/*

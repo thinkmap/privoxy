@@ -1,6 +1,7 @@
-# privoxy-alpine
+# privoxy
 
 A privoxy docker image based on Alpine Linux. This image also incoperates AdBlock lists which is from https://projects.zubr.me/wiki/adblock2privoxy
+
 Has socks5 forwarding to 172.17.0.1:9151 enabled by default.
 
 ```
