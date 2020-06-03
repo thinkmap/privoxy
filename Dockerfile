@@ -8,7 +8,6 @@ RUN apk --no-cache --update add privoxy wget ca-certificates bash p7zip && \
     7za e ab2p.easylist_advblock.7z -y -otemp && \
     cp temp/ab2p.system.action temp/ab2p.action temp/ab2p.system.filter temp/ab2p.filter /etc/privoxy && \
     sed -i'' 's/127\.0\.0\.1:8118/0\.0\.0\.0:8118/' /etc/privoxy/config && \
-    sed -i'' 's/enable-edit-actions\ 0/enable-edit-actions\ 1/' /etc/privoxy/config && \
     sed -i'' 's/#max-client-connections/max-client-connections/' /etc/privoxy/config && \
     sed -i'' 's/accept-intercepted-requests\ 0/accept-intercepted-requests\ 1/' /etc/privoxy/config && \    
     sed -i'' 's/http/https/g' /etc/privoxy/ab2p.system.filter && \
@@ -17,6 +16,7 @@ RUN apk --no-cache --update add privoxy wget ca-certificates bash p7zip && \
     echo 'filterfile ab2p.system.filter' >> /etc/privoxy/config && \
     echo 'filterfile ab2p.filter' >> /etc/privoxy/config && \
     echo 'forward-socks5t / 172.17.0.1:9151 .'  >> /etc/privoxy/config && \
+    echo 'enable-remote-toggle 0' >> /etc/privoxy/config && \
     rm -Rf temp ab2p.easylist_advblock.7z && \
     apk del bash p7zip
 RUN chown privoxy.privoxy /etc/privoxy/*
