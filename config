@@ -1,0 +1,9 @@
+listen-address 0.0.0.0:8181
+forward-socks5t / 0.0.0.0:9151 .
+forward 10.*.*.*/ .
+forward 127.*.*.*/ .
+debug 1
+forwarded-connect-retries  1
+accept-intercepted-requests 1
+connection-sharing 1
+max-client-connections 256
