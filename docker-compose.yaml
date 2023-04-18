@@ -1,0 +1,10 @@
+version: "3"
+services:
+    privoxy:
+      image: harbor.devops.mcd.com.cn/data-public/privoxy:v2
+      restart: always
+      container_name: privoxy
+      ports:
+       - 8181:8181
+      volumes:
+        - ./config:/etc/privoxy/config
