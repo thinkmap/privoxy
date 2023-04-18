@@ -32,6 +32,6 @@ You will now need to set up your browser / client to use the HTTP Privoxy proxy 
 The connection can be confirmed with the following commands from your client machine:
 
 ```
-curl --proxy localhost:8118 https://check.torproject.org
-curl --socks5 localhost:9050 https://check.torproject.org
+curl --proxy localhost:8118 https://www.privoxy.org/
+curl --socks5 localhost:9151 https://www.privoxy.org
 ```
