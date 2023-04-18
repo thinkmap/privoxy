@@ -1,7 +1,7 @@
 version: "3"
 services:
     privoxy:
-      image: harbor.devops.mcd.com.cn/data-public/privoxy:v2
+      image: registry.cn-shanghai.aliyuncs.com/c-things/privoxy:v1
       restart: always
       container_name: privoxy
       ports:
